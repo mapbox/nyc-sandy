@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0;"/>
+ 	<title>Hurricane Evacuation Map</title>		
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js" type="text/javascript"></script>
+	<script src="http://api.tiles.mapbox.com/mapbox.js/v0.6.6/mapbox.js"></script>
+	<script src="js/map.js" type="text/javascript"></script>
+	<link href="http://api.tiles.mapbox.com/mapbox.js/v0.6.6/mapbox.css" rel="stylesheet" type="text/css"></link>
+	<link href="css/evac.css" rel="stylesheet" type="text/css"></link>
+	<style type="text/css">
+		#order{
+			position:absolute;
+			top:10px;
+			left:85px;
+			padding:8px;
+		}
+	</style>
+  </head>
+  <body>
+	<!-- div class="ctl order" id="order">An evacuation order is in effect for Zone A</div -->
+    <div id="map"></div>
+    <div id="searchAgain" class="ctl"><a href="index.html">Search<br/>Again</a></div>
+    <div id="legend" class="ctl" onclick="legend();">Legend</div>
+    <div id="close" class="ctl" onclick="legend();">Close</div>
+	<div class="ctl" id="legendPane">
+		<div><b>LEGEND</b></div>
+		<div id="legendContent">
+			<div>
+				<img src="img/evac.png"/><b>Evacuation Centers/Shelters</b>
+			</div>
+			<div>
+				<img src="img/zA.png"/><b>Zone A</b>
+				<div>Residents in Zone A face the <b>highest</b> risk of flooding from a hurricane's storm surge</div>
+			</div>
+			<div>
+				<img src="img/zB.png"/><b>Zone B</b>
+				<div>Residents in Zone B can expect a <b>moderate</b> likelihood of evacuation if a hurricane is expected to reach NYC</div>
+			</div>
+			<div>
+				<img src="img/zC.png"/><b>Zone C</b>
+				<div>Residents in Zone C can expect a <b>low</b> likelihood of evacuation if a hurricane is expected to reach NYC</div>
+			</div>
+			<div><br/>Go to <a href="http://nyc.gov">NYC.gov</a> for more information</div>
+		</div>
+	</div>
+    
+  </body>
+</html>
