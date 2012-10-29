@@ -30,6 +30,7 @@ $(document).ready(function() {
     mapbox.interaction().map(map).auto();
     map.ui.zoomer.add();
     map.ui.zoombox.add();
+    map.ui.attribution.content(o.attribution);
     map.ui.attribution.add();
 
     var querystring = location.search.replace('?', '').split('&'),

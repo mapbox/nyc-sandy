@@ -104,7 +104,7 @@ html, body, #map {
 #legendPane{
 	position:absolute;
 	right:10px;
-	bottom:10px;
+	bottom:20px;
 	background-color:#ffffff;
 	padding:5px;
 	z-index:10000000;
@@ -122,7 +122,6 @@ html, body, #map {
 	margin: 10px 3px 3px 10px;
 }
 .map-attribution{
-	display:none;
 }
 	/* ------- Smartphones (portrait and landscape) ------ */
 
