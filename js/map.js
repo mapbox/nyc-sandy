@@ -5,7 +5,6 @@ $(document).ready(function() {
         "attribution": "<a href='http://mapbox.com/about/maps' target='_blank'>Terms & Feedback</a>",
         "bounds": [-180, -85, 180, 85],
         "center": [-73.89957298446463, 40.71661255950389, 12],
-        "data": ["http://a.tiles.mapbox.com/v3/villeda.map-up0fpg1g/markers.geojsonp"],
         "geocoder": "http://a.tiles.mapbox.com/v3/villeda.map-up0fpg1g/geocode/{query}.jsonp",
         "grids": ["http://a.tiles.mapbox.com/v3/villeda.map-up0fpg1g/{z}/{x}/{y}.grid.json", "http://b.tiles.mapbox.com/v3/villeda.map-up0fpg1g/{z}/{x}/{y}.grid.json", "http://c.tiles.mapbox.com/v3/villeda.map-up0fpg1g/{z}/{x}/{y}.grid.json", "http://d.tiles.mapbox.com/v3/villeda.map-up0fpg1g/{z}/{x}/{y}.grid.json"],
         "id": "villeda.map-up0fpg1g",
@@ -72,4 +71,17 @@ function legend() {
         leg.css("display", "block");
         if (w == "10px") c.css("display", "block");
     }
+}
+
+var oldreq = wax.request.get;
+var req_queue = queue(1);
+
+wax.request.get = function(url, cb) {
+    req_queue.defer(function(done) {
+        function new_callback(a, b, c) {
+            cb(a, b, c);
+            done();
+        }
+        oldreq.apply(wax.request, [url, new_callback]);
+    });
 };
