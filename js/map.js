@@ -65,7 +65,9 @@ $(document).ready(function() {
                 coordinates: [params.lon, params.lat]
             },
             properties: {
-                image: "http://gis-dev-1.nycnet/doitt/webmap-conf/styles/mapIcons/SearchLocation.gif"
+                "marker-color": "#f63a39",
+                "marker-size": "medium",
+                "marker-zoom": "17"
             }
         }];
         // See http://mapbox.com/mapbox.js/api/v0.6.6/#map.addLayer
