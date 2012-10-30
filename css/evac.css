@@ -125,6 +125,18 @@ html, body, #map {
   right: 10px;
   left: auto;
 }
+
+/* Interactive markers */
+img.center-marker {
+  margin-left: -9px;
+  margin-top: -9px;
+  position: absolute;
+  pointer-events: all;
+  cursor: pointer;
+  }
+  .marker-tooltip .name {
+    font-weight: bold;
+  }
 	/* ------- Smartphones (portrait and landscape) ------ */
 
 	@media screen
