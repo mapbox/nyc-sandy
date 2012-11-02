@@ -147,7 +147,7 @@ var centers = {
             "ZIP_CODE": 10019.0,
             "BORO": "MN",
             "OEM_LABEL": "JOHN JAY COLLEGE",
-            "Role": null
+            "Role": "Special Medical Needs Only"
         },
         "geometry": {
             "type": "Point",
