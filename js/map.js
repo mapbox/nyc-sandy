@@ -38,12 +38,27 @@ $(document).ready(function() {
         });
     var interaction = mapbox.markers.interaction(markerLayer);
     map.addLayer(markerLayer);
+    var boroLookup = (function() {
+        var b = {
+            BK: 'Brooklyn',
+            BX: 'Bronx',
+            MN: 'Manhattan',
+            QN: 'Queens',
+            SI: 'Staten Island'
+        };
+        return function(k) {
+            return b[k] ? b[k] : k;
+        };
+    })();
     interaction.formatter(function(feature) {
         var p = feature.properties;
-        return  "<div class='name'>"  + p.EC_NAME   + "</div>" +
-                "<div class='addr'>"  + p.ADDRESS   + "</div>" +
-                "<div class='cross'>" + p.CROSS_STR + "</div>" +
-                "<div class='boro'>"  + p.BOROUGH   + "</div>";
+        var o = "<div class='name'>"  + boroLookup(p.OEM_LABEL) + "</div>" +
+                "<div class='addr'>"  + boroLookup(p.BLDG_ADD)  + "</div>" +
+                "<div class='boro'>"  + boroLookup(p.BORO)      + "</div>";
+        if (p.Role) {
+            o += "<div class='role'>"  + p.Role + "</div>";
+        }
+        return o;
     });
 
     map.ui.zoomer.add();

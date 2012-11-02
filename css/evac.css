@@ -134,7 +134,8 @@ img.center-marker {
   pointer-events: all;
   cursor: pointer;
   }
-  .marker-tooltip .name {
+  .marker-tooltip .name,
+  .marker-tooltip .role {
     font-weight: bold;
   }
 	/* ------- Smartphones (portrait and landscape) ------ */
