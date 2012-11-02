@@ -33,7 +33,9 @@ $(document).ready(function() {
         .factory(function(f) {
             var img = document.createElement('img');
             img.className = 'center-marker';
-            img.setAttribute('src', 'img/evac.png');
+            f.properties.Role == undefined ?
+                img.setAttribute('src', 'img/evac.png') :
+                img.setAttribute('src', 'img/evac-medical.png');
             return img;
         });
     var interaction = mapbox.markers.interaction(markerLayer);
