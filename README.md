@@ -5,6 +5,12 @@
 
 ## Generating the centers.js file
 
-The `js/centers.js` file was converted with [ogr2ogr](http://www.gdal.org/ogr2ogr.html) from a point shapefile like so:
+The `js/centers.js` file was converted with [ogr2ogr](http://www.gdal.org/ogr2ogr.html) from a point shapefile.
 
-    ogr2ogr -f "GeoJSON" -s_srs EPSG:900913 -t_srs EPSG:4326 centers.js src.shp
+1) Convert shapefile to GeoJSON:
+
+    ogr2ogr -f "GeoJSON" -s_srs EPSG:900913 -t_srs EPSG:4326 centers.json src.shp
+
+2) Open GeoJSON and copy content into `js/centers.js`, wrapped into the centers variable:
+
+    var centers = <content of centers.json>;
