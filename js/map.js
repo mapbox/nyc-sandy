@@ -26,6 +26,7 @@ $(document).ready(function() {
         lon: o.center[0]
     });
     map.addLayer(mapbox.layer().tilejson(o));
+    map.ui.hash.add();
 
     // Add interactive markers.
     var markerLayer = mapbox.markers.layer()
