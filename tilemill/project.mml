@@ -1,0 +1,105 @@
+{
+  "bounds": [
+    -74.2572,
+    40.496,
+    -73.7203,
+    40.9042
+  ],
+  "center": [
+    -73.9435,
+    40.6916,
+    11
+  ],
+  "format": "png",
+  "interactivity": {
+    "layer": "center",
+    "template_teaser": "<div class='int'>\n\t<div class='name'>{{{OEM_LABEL}}}</div>\n\t<div class='addr'>{{{BLDG_ADD}}} </div>\n\t<div class='boro'>{{{BORO}}}</div>\n\t<div class='role'><b>{{{Role}}}</b></div>\n</div>",
+    "fields": [
+      "OEM_LABEL",
+      "BLDG_ADD",
+      "BORO",
+      "Role"
+    ]
+  },
+  "minzoom": 0,
+  "maxzoom": 19,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss"
+  ],
+  "Layer": [
+    {
+      "id": "countries",
+      "name": "countries",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "geometry": "polygon",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-countries.zip",
+        "type": "shape"
+      }
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -74.2555477559329,
+        40.496317607621386,
+        -73.70000905553454,
+        40.91577393445291
+      ],
+      "id": "zones",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/ianvilleda/Downloads/zones/EVACUATION_ZONE_CAT1NNE.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "zones"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        -74.19257656962823,
+        40.527139317850406,
+        -73.79561420234886,
+        40.8745368867356
+      ],
+      "id": "center-out",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/ianvilleda/Downloads/Consolidated_Shelter_List_WGS84/Consolidated_Shelter_List_WGS84.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "center-out",
+      "status": "off"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        -74.19257656962823,
+        40.527139317850406,
+        -73.79561420234886,
+        40.8745368867356
+      ],
+      "id": "center",
+      "class": "",
+      "Datasource": {
+        "file": "/Users/ianvilleda/Downloads/Consolidated_Shelter_List_WGS84/Consolidated_Shelter_List_WGS84.shp"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "center",
+      "status": "off"
+    }
+  ],
+  "scale": 1,
+  "metatile": 2,
+  "_basemap": "",
+  "name": "Evacuation Zones and Centers",
+  "description": "",
+  "attribution": "",
+  "legend": "<div class='legend'>\n\t<div class='zones'>\n\t\t<div class='color'>\n\t\t\t<img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAAdSURBVDiNY/zPoPSfgQLARInmUQNGDRg1YDAZAADiJwJAwtCi/wAAAABJRU5ErkJggg==\"/>\n\t\t\t<span class='zlabel'>Zone A</span>\n\t\t\t<div class='exp'>Residents in Zone A face the <b>highest</b> risk of flooding from a hurricane's storm surge</div>\n\t\t</div>\n\t\t<div class='color'>\n\t\t\t<img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAAdSURBVDiNY/x/l+E/AwWAiRLNowaMGjBqwGAyAADYsAL7qkubRAAAAABJRU5ErkJggg==\"/>\n\t\t\t<span class='zlabel'>Zone B</span>\n\t\t\t<div class='exp'>Residents in Zone B can expect a <b>moderate</b> likelihood of evacuation if a hurricane is expected to reach NYC</div>\n\t\t</div>\n\t\t<div class='color'>\n\t\t\t<img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAAdSURBVDiNYyz/z/CfgQLARInmUQNGDRg1YDAZAAA6hQKV4kKvpwAAAABJRU5ErkJggg==\"/>\n\t\t\t<span class='zlabel'>Zone C</span>\n\t\t\t<div class='exp'>Residents in Zone C can expect a <b>low</b> likelihood of evacuation if a hurricane is expected to reach NYC</div>\n\t\t</div> \n\t</div>\n</div> "
+}
